@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_juergen240 }}
       DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
     steps:
@@ -21,24 +21,24 @@ jobs:
 
     # Log in to Docker Hub
     - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKERHUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+      run: echo "${{ secrets.DOCKERHUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_juergen240 }}" --password-stdin
 
     # Build Frontend Image
     - name: Build Frontend Image
       run: |
-        docker build -t $DOCKERHUB_USERNAME/frontend:latest ./path-to-frontend
+        docker build -t $DOCKERHUB_juergen240/frontend:latest ./path-to-frontend
 
     # Build Backend Image
     - name: Build Backend Image
       run: |
-        docker build -t $DOCKERHUB_USERNAME/backend:latest ./path-to-backend
+        docker build -t $DOCKERHUB_juergen240/backend:latest ./path-to-backend
 
     # Push Frontend Image to Docker Hub
     - name: Push Frontend Image
       run: |
-        docker push $DOCKERHUB_USERNAME/frontend:latest
+        docker push $DOCKERHUB_juergen240/frontend:latest
 
     # Push Backend Image to Docker Hub
     - name: Push Backend Image
       run: |
-        docker push $DOCKERHUB_USERNAME/backend:latest
+        docker push $DOCKERHUB_juergen240/backend:latest
